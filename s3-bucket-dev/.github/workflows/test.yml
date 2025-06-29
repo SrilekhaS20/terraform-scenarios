@@ -9,4 +9,4 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "GitHub Actions is working!"
+      - run: echo "Does GitHub Actions working?"
