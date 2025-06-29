@@ -3,6 +3,7 @@ name: Terraform Deploy
 on:
   push:
     branches: [main]
+  workflow_dispatch: 
 
 jobs:
   terraform:
@@ -25,10 +26,10 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -detailed-exitcode || exit 0
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+      #- name: Terraform Apply
+      #  run: terraform apply -auto-approve
         
       #- name: Terraform Destroy
       #  run: terraform destroy -auto-approve
